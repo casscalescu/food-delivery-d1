@@ -7,8 +7,8 @@ class MealsController
   end
 
   def add
-    name = @view.ask_user_for("name")
-    price = @view.ask_user_for("price")
+    name = @view.ask_user_for("Name")
+    price = @view.ask_user_for("Price")
     meal = Meal.new(name: name, price: price)
     @meal_repo.create(meal)
   end
@@ -16,7 +16,7 @@ class MealsController
   def edit
     list
     index = @view.ask_user_for_index
-    new_name = @view.ask_user_for("new name")
+    new_name = @view.ask_user_for("New name")
     new_price = @view.ask_user_for_price
     @meal_repo.edit_meal(index, new_name, new_price)
     list
